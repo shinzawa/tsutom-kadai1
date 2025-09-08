@@ -1,0 +1,49 @@
+.header {
+  background: #FFFFFF;
+}
+
+.header__inner {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: 1230px;
+}
+
+.header-utilities {
+  display: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: absolute;
+  color: #8B7969;
+  font-family: Inika;
+  text-decoration: none;
+  font-weight: Regular;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-utilities nav {
+  width: 18%;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-nav__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-nav__button {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}

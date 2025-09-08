@@ -1,0 +1,250 @@
+.contact-form__content {
+  margin: 0 auto;
+  padding: 30px 15px;
+  max-width: 1230px;
+}
+
+.contact-form__heading {
+  font-family: Inika;
+  font-size: 35px;
+  color: #8B7969;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.form {
+  display:relative;
+
+  margin: 0 auto;
+  width: 972px;
+  text-align: left;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.form__group-content-name {
+  width: 600px;
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form__group-content-gender {
+  width: 600px;
+  display: flex;
+  justify-content: left;
+  font-family: Inika;
+  font-size: 18px;
+}
+.form__group-content-tel {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+    font-family: Inika;
+      font-size: 18px;
+
+  margin-bottom: 15px;
+}
+.form__group-title {
+width: 300px;
+}
+.form__label--item {
+  font-family: Inika;
+    font-size: 20px;
+    color: #8B7969;
+}
+.form__label--required {
+  background: #fafafa;
+  color: #ff0000;
+}
+
+.form__error {
+  height: 20px;
+  color: #ff0000;
+  text-align: left;
+}
+
+.form__input--text-family-name input {
+    padding: 10px;
+    width: 287.15px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    background-color: #f4f4f4;
+      border-color: #f4f4f4;
+    appearance: none;
+  }
+.form__input--text-first-name input {
+  padding: 10px;
+  width: 287.15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+    border-color: #f4f4f4;
+  appearance: none;
+  margin: auto;
+}
+.form__input--text-tel input {
+  font-family: Inika;
+  font-size: 14px;
+  padding: 10px;
+  width: 178.12px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+    border-color: #f4f4f4;
+  appearance: none;
+  text-align: center;
+}
+.form__input--text-tel p {
+  font-family: Inika;
+  font-size: 20px;
+  padding: 10px;
+  width: 10.75px;
+  display: inline-block;
+margin-top: -5px;
+  appearance: none;
+}/* 標準のラジオボタンを非表示 */
+input[type="radio"] {
+  display: none;
+}
+
+/* ラベルの前に楕円形の表示を作成 */
+label {
+  position: relative;
+  padding-left: 25px;
+  /* 楕円のスペースを確保 */
+  cursor: pointer;
+}
+
+label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  /* 枠線の色 */
+  border-radius: 50%;
+  /* 楕円形にする (円形なら50%のまま) */
+  background: white;
+  /* 未選択時の背景色 */
+}
+
+/* 選択された時のスタイル */
+input[type="radio"]:checked+label::before {
+  background: #8B7969;
+  /* 選択時の背景色 */
+  border-color: #8B7969;
+  /* 選択時の枠線の色 */
+}
+
+.form__input--text-gender input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  appearance: none;
+}
+.form__input--text-gender label {
+  font-family: Inika;
+  font-size: 18px;
+  color: #8B7969;
+  display: inline-block;
+  margin-right: 20px;
+  appearance: none;
+}
+
+.form__input--text input,
+.form__input--textarea textarea {
+  padding: 10px;
+  width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+    border-color: #f4f4f4;
+  appearance: none;
+}
+
+.form__input--text input {
+  height: 38px;
+}
+
+.form__input--textarea textarea {
+  height: 180px;
+}
+
+.form__group-content {
+  width: 600px;
+    font-family: Inika;
+      font-size: 14px;
+      color: #BEB1A6;
+}
+.form__button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form__button-submit {
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  height: 46px;
+  border: none;
+  border-radius: 3px;
+  background: #8B7969;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inika;
+  font-size: 20px;
+}
+
+.form__input-select {
+  position: absolute;
+  left: 10px;
+  color: #8B7969;
+}
+.form__group-content-select {
+  width: 600px;
+  position: relative;
+}
+.form__group-content-select::after {
+
+
+}
+select {
+    border-color: #f4f4f4;
+      margin-right: 269px;
+      width: 331.68px;
+      height: 38px;
+      color: #8B7969;
+      background-color: #f4f4f4;
+}
+.select_wrapper {
+  position: relative;
+      width: 331.68px;
+
+}
+
+.select_wrapper::after {
+
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 12px solid #555;
+  border-bottom: 0;
+  pointer-events: none;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  text-align: left;
+}
+
+
