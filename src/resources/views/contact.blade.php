@@ -7,7 +7,7 @@
 @section('content')
 <div class="contact-form__content">
     <div class="contact-form__heading">
-        <h2>Contact</h2>
+        <p>Contact</p>
     </div>
     <form class="form" action="/confirm" method="post">
         @csrf

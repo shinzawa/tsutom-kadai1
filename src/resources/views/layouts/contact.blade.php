@@ -15,9 +15,9 @@
     <header class="header">
         <div class="header__inner">
             <div class="header-utilities">
-                <h2 class="header__logo" >
+                <p class="header__logo" >
                     Fashionably Late
-                </h2>
+                </p>
             </div>
         </div>
     </header>

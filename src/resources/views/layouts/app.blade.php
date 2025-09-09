@@ -14,10 +14,13 @@
 <body>
   <header class="header">
     <div class="header__inner">
+      <div class="header-utilities"> </div>
       <div class="header-utilities">
-        <a class="header__logo" href="/">
+        <p class="header__logo">
           Fashionably Late
-        </a>
+      </p>
+      </div>
+      <div class="header-utilities">
         <nav>
           <ul class="header-nav">
             @if (Auth::check())
@@ -27,7 +30,7 @@
                 <button class="header-nav__button">logout</button>
               </form>
             </li>
-            @else 
+            @else
             <li class="header-nav__item">
               <a class="header-nav__link" href="/register">register</a>
             </li>
@@ -35,6 +38,7 @@
           </ul>
         </nav>
       </div>
+      <hr>
     </div>
   </header>
 

@@ -1,10 +1,14 @@
 .confirm__content {
+    display: relative;
+
     margin: 0 auto;
     padding: 0px 15px;
-    max-width: 1230px;
 }
 
 .confirm__heading {
+    display: absolute;
+    width: 1512px;
+    height: 100px;
     font-family: Inika;
     font-size: 35px;
         color: #8B7969;
