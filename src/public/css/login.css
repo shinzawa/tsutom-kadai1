@@ -54,7 +54,10 @@ body {
   color: #ff0000;
   text-align: left;
 }
-
+.form__label--item {
+  font-family: Inika;
+  font-size: 25px;
+}
 .form__input--text input {
   padding: 10px;
   width: 100%;
@@ -68,21 +71,24 @@ body {
 .form__button {
   width: 160px;
   height: 46px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .form__button-submit {
-  padding: 10px;
   width: 160px;
   height: 46px;
   border: none;
-  border-radius: 3px;
   background: #82756A;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+.form__button-submit-text {
+  display: inline-block;
   font-family: Inika;
-    font-size: 20px;
-  }
+  font-size: 20px;
+  padding-bottom: 5px;
+}
 
 .register__link {
   margin-top: 20px;

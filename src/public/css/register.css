@@ -69,16 +69,18 @@ body {
 }
 
 .form__button-submit {
-  padding: 10px;
   width: 120px;
   height: 46px;
   border: none;
-  border-radius: 3px;
   background: #82756A;
   color: #FFFFFF;
   cursor: pointer;
+}
+.form__button-submit-text {
+  display: inline-block;
   font-family: Inika;
   font-size: 20px;
+  padding-bottom: 3px;
 }
 
 .login__link {

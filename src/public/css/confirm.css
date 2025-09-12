@@ -1,17 +1,15 @@
 .confirm__content {
-    display: relative;
+
 
     margin: 0 auto;
     padding: 0px 15px;
 }
 
 .confirm__heading {
-    display: absolute;
-    width: 1512px;
-    height: 100px;
+
     font-family: Inika;
     font-size: 35px;
-        color: #8B7969;
+    color: #8B7969;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -68,13 +66,32 @@
     text-align: center;
 }
 
-.form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+.form__button-submit-store {
+    width: 120px;
+    height: 42px;
     border: none;
-    border-radius: 3px;
-    background: #8B7969;
+    background: #82756A;
     color: #ffffff;
     cursor: pointer;
+    text-align: center;
 }
+.form__button-submit-text {
+    display: inline-block;
+    padding-bottom: 4px;
+    font-family: Inika;
+    font-size: 20px;
+}
+
+.form__button-submit-modify {
+    width: 120px;
+    height: 42px;
+    border: none;
+    background: #ffffff;
+    color: #8B7969;
+    cursor: pointer;
+}
+
+.form__button-submit-modify span {
+    text-decoration: underline;
+}
+

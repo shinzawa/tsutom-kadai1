@@ -1,6 +1,6 @@
 .contact-form__content {
   margin: 0 auto;
-  padding: 30px 15px;
+  padding: 0px 15px;
   max-width: 1230px;
 }
 
@@ -189,18 +189,20 @@ input[type="radio"]:checked+label::before {
 
 .form__button-submit {
   text-align: center;
-  padding: 10px;
+  /* padding: 10px; */
   width: 160px;
   height: 46px;
   border: none;
-  border-radius: 3px;
-  background: #8B7969;
+  background: #82756A;
   color: #ffffff;
   cursor: pointer;
+}
+.form__button-submit span {
+  display: inline-block;
+  padding-bottom: 0px;
   font-family: Inika;
   font-size: 20px;
 }
-
 .form__input-select {
   position: absolute;
   left: 10px;
@@ -215,21 +217,19 @@ input[type="radio"]:checked+label::before {
 
 }
 select {
-    border-color: #f4f4f4;
-      margin-right: 269px;
-      width: 331.68px;
-      height: 38px;
-      color: #8B7969;
-      background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  margin-right: 269px;
+  width: 331.68px;
+  height: 38px;
+  color: #8B7969;
+  background-color: #f4f4f4;
 }
 .select_wrapper {
   position: relative;
-      width: 331.68px;
-
+  width: 331.68px;
 }
 
 .select_wrapper::after {
-
   content: "";
   position: absolute;
   top: 14px;

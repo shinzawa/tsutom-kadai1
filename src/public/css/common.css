@@ -11,20 +11,23 @@
 }
 
 hr {
-  margin: 0 auto;
+  margin: 40px auto 0px auto;
   height: 1px;
   color: #E0DFDE;
   background-color: #E0DFDE;
 }
 
 .header-utilities {
- width: 500px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+ width: 504px;
  height: 100px;
  background-color: white;
 }
 
 .header__logo {
-
   text-align: center;
   vertical-align: middle;
   color: #8B7969;
@@ -35,12 +38,6 @@ hr {
 
 
 }
-
-.header-utilities nav {
-
-}
-
-
 
 .header-nav {
   display: flex;
