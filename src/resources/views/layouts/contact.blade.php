@@ -21,7 +21,7 @@
             </div>
         </div>
     </header>
-
+<hr>
     <main>
         @yield('content')
     </main>

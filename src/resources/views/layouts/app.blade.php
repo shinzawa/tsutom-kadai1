@@ -16,9 +16,9 @@
     <div class="header__inner">
       <div class="header-utilities"> </div>
       <div class="header-utilities">
-        <p class="header__logo">
+        <span class="header__logo">
           Fashionably Late
-      </p>
+        </span>
       </div>
       <div class="header-utilities">
         <nav>
@@ -45,6 +45,8 @@
   <main>
     @yield('content')
   </main>
+
+  @livewireScripts
 </body>
 
 </html>

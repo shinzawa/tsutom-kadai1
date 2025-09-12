@@ -9,7 +9,7 @@
     <div class="confirm__heading">
         <p>Confirm</p>
     </div>
-    <form class="form" action="/thanks" method="post">
+    <form class="form" action="?" method="post">
         @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">
@@ -30,7 +30,8 @@
                         case 3: $gender='その他';break;
                         }
                         @endphp
-                        <input type="text" name="name" value="{{$gender}}" readonly />
+                        <span>{{$gender}}</span>
+                        <input type="hidden" name="name" value="{{ $contact['gender'] }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -42,7 +43,10 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">電話番号</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="tel" value="{{ $contact['tel1'].$contact['tel2'].$contact['tel3'] }}" readonly />
+                        @php
+                        $tel=$contact['tel1'].'-'.$contact['tel2'].'-'.$contact['tel3']
+                        @endphp
+                        <input type="text" name="tel" value="{{ $tel }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -60,7 +64,7 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="tel" name="tel" value="{{ $contact['category'] }}" readonly />
+                        <input type="text" name="category" value="{{ $categories[$contact['category']]['content'] }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -72,7 +76,12 @@
             </table>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">送信</button>
+            <button class="form__button-submit-store" type="submit" formaction="/thanks">
+                <span class="form__button-submit-text">送信</span>
+            </button>
+            <button class="form__button-submit-modify" type="submit" formaction="/">
+                <span class="form__button-submit-text">修正</span>
+            </button>
         </div>
     </form>
 </div>
