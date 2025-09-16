@@ -24,12 +24,23 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
+            'last_name' => ['required'],
+            'first_name' => ['required'],
+            'gender' => ['required'],
+            'email' => ['required', 'email'],
+            'tel' => ['required'],
+            'address' => ['required'],
+            'content' => ['required', 'max:120'],
+        ];
+    }
+    pulic function messages()
+    {
+        return [
             'last_name.required' => '姓を入力してください',
             'first_name.required' => '名を入力してください',
             'gender.required' => '性別を選択してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
-            'tel.required' => '電話番号を入力してください',
             'tel.required' => '電話番号を入力してください',
             'address.required' => '住所を入力してください',
             'category.required' => 'お問い合わせの種類を選択してください',

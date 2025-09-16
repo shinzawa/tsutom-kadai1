@@ -14,26 +14,45 @@ class Modal extends Component
 
 
     public $showModal = false;
-
     protected $paginationTheme = 'bootstrap';
-
     public $contact;
 
+    public $keyword = '';
+    public $gender = '';
+    public $category_id = '';
+    public $date = '';
+    public $contact_id = '';
 
-    public function render()
-    {
-        // $contacts = Contact::with('category')
-        //     ->paginate(7);
-        // $contacts = Contact::with('category');
-        // $categories = Category::all();
-
-        return view('livewire.modal', ['contacts' => Contact::with('category')->paginate(7)]);
+    public function search() {
+        $this->resetPage(); /* 再レンダリング*/
     }
 
-
-    public function openModal($id)
+    public function resetSearch() {
+        $this->keyword = '';
+        $this->gender = '';
+        $this->category_id = '';
+        $this->date = '';
+        $this->resetPage();
+    }
+    public function render()
     {
-        $this->contact = Contact::with('category')->find($id);
+        $contacts = Contact::with('category')
+            ->KeywordSearch($this->keyword)
+            ->GenderSearch($this->gender)
+            ->CategorySearch($this->category_id)
+            ->DateSearch($this->date)->paginate(7);
+
+        $categories = Category::all();
+
+        return view('livewire.modal', [
+            'contacts' => $contacts,
+            'categories' => $categories
+        ]);
+    }
+
+    public function openModal()
+    {
+        $this->contact = Contact::with('category')->find($this->contact_id);
         $this->showModal = true;
     }
 

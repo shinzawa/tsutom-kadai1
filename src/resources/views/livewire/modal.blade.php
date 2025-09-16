@@ -1,10 +1,36 @@
 <div>
+    <form class="search-form" wire:submit.prevent="search">
+        @csrf
+        <div class="search-form__item">
+            <input class="search-form__item-input" type="text" wire:model="keyword" value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください" />
+            <select class="search-form__item-gender" wire:model="gender" id="">
+                <option class="" value="" hidden>性別</option>
+                <option value="0" id="0">全て</option>
+                <option value="1" id="1">男性</option>
+                <option value="2" id="2">女性</option>
+                <option value="3" id="3">その他</option>
+            </select>
+            <select class="search-form__item-select" wire:model="category_id">
+                @foreach($categories as $category)
+                <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                @endforeach
+            </select>
+            <label for="date"></label>
+            <input class="search-form__item-date" id="date" wire:model="date" type="date"></input>
+        </div>
+        <div class="search-form__button">
+            <button class="search-form__button-submit" type="sumit">検索</button>
+        </div>
+        <div class="reset-form__button">
+            <button class="reset-form__button-submit" wire:click="resetSearch">リセット</button>
+        </div>
+    </form>
     <div class="buttons">
         <div class="export-btn">
             <button class="export">エクスポート</button>
         </div>
         <div class="paginate">
-            {{ $contacts->links('vendor.pagination.simple-pagination') }}
+            {{ $contacts->links() }}
         </div>
     </div>
     <div class="contact-table">
@@ -48,8 +74,7 @@
                         </p>
                     </div>
                 </td>
-                <td>
-                    <button wire:click="openModal({{ $contact['id'] }})" type="button" class="detail">詳細</button>
+                <td> <button wire:click="openModal()" type="button" class="detail">詳細</button>
                 </td>
             </tr>
             @endforeach
@@ -122,4 +147,6 @@
         </div>
     </div>
     @endif
+</div>
+
 </div>
