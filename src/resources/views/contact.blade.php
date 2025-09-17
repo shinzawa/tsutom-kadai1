@@ -18,7 +18,7 @@
             </div>
             <div class="form__group-content-name">
                 <div class="form__input--text-family-name">
-                    <input type="text" name="last_name" placeholder="例：山田" />
+                    <input type="text" name="last_name" placeholder="例：山田" value="{{ old('last_name') }}" />
                 </div>
                 <div> @error('last_name')
                     {{ $message }}
@@ -94,7 +94,13 @@
                     <input type="tel" name="tel3" placeholder="5678" />
                 </div>
                 <div class="form__error">
-                    @error('tel')
+                    @error('tel1')
+                    {{ $message }}
+                    @enderror
+                    @error('tel2')
+                    {{ $message }}
+                    @enderror
+                    @error('tel3')
                     {{ $message }}
                     @enderror
                 </div>
@@ -133,7 +139,7 @@
             </div>
             <div class="form__group-content-select">
                 <div class="select_wrapper">
-                    <select name="category">
+                    <select name="category_id">
                         <option value="" hidden><span class="form__input-select">&nbsp;&nbsp;&nbsp;選択して下さい</span></option>
 
                         <option value="1">商品のお届けについて</option>

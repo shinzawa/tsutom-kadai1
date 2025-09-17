@@ -21,7 +21,7 @@ class Modal extends Component
     public $gender = '';
     public $category_id = '';
     public $date = '';
-    public $contact_id = '';
+    public $selectedContact;
 
     public function search() {
         $this->resetPage(); /* 再レンダリング*/
@@ -50,9 +50,9 @@ class Modal extends Component
         ]);
     }
 
-    public function openModal()
+    public function openModal($id)
     {
-        $this->contact = Contact::with('category')->find($this->contact_id);
+        $this->selectedContact = Contact::with('category')->find($id);
         $this->showModal = true;
     }
 
