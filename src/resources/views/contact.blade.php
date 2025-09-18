@@ -9,7 +9,7 @@
     <div class="contact-form__heading">
         <p>Contact</p>
     </div>
-    <form class="form" action="/confirm" method="post">
+    <form class="form" action="/confirm" method="post" novalidate>
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -173,11 +173,11 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                    <textarea name="content" placeholder="お問い合わせ内容をご記載ください">{{ old('content') }}</textarea>
+                    <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                 </div>
             </div>
             <div class="form__error">
-                @error('content')
+                @error('detail')
                 {{ $message }}
                 @enderror
             </div>

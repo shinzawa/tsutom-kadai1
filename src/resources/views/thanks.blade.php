@@ -21,7 +21,7 @@
         <span class="thanks__heading">
             お問い合わせありがとうございました
         </span>
-        <form action="/" method="get">
+        <form action="/" method="get" novalidate>
             <input class="thanks__form" type="submit" value="HOME">
         </form>
         </div>

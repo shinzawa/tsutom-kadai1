@@ -18,14 +18,18 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'category_id', 'content']);
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'category_id', 'detail']);
         $categories = Category::all();
         return view('confirm', compact('contact', 'categories'));
     }
 
-    public function store(ContactRequest $request)
+    public function store(Request $request)
     {
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel', 'address', 'building', 'category_id', 'content']);
+        dump('store');
+        if ($request->input('action') == 'back') {
+            return redirect('/')->withInput();
+        }
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel', 'address', 'building', 'category_id', 'detail']);
         Contact::create($contact);
         return view('thanks');
     }
