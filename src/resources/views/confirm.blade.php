@@ -32,7 +32,7 @@
                         }
                         @endphp
                         <span>{{$gender}}</span>
-                        <input type="hidden" name="name" value="{{ $contact['gender'] }}" readonly />
+                        <input type="hidden" name="gender" value="{{ $contact['gender'] }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -45,9 +45,13 @@
                     <th class="confirm-table__header">電話番号</th>
                     <td class="confirm-table__text">
                         @php
-                        $tel=$contact['tel1'].'-'.$contact['tel2'].'-'.$contact['tel3']
+                        $tel=$contact['tel1'].'-'.$contact['tel2'].'-'.$contact['tel3'];
                         @endphp
                         <input type="text" name="tel" value="{{ $tel }}" readonly />
+                        <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" />
+                        <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" />
+                        <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" />
+
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -65,7 +69,7 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}"  />
+                        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
                         <input type="text" name="content" value="{{ $categories[$contact['category_id'] - 1]['content'] }}" readonly />
                     </td>
                 </tr>
