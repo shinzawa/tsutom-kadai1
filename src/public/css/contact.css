@@ -73,7 +73,7 @@ width: 300px;
     border: 1px solid #ddd;
     border-radius: 0px;
     background-color: #f4f4f4;
-      border-color: #f4f4f4;
+    border-color: #f4f4f4;
     appearance: none;
   }
 .form__input--text-first-name input {
@@ -178,9 +178,9 @@ input[type="radio"]:checked+label::before {
 
 .form__group-content {
   width: 600px;
-    font-family: Inika;
-      font-size: 14px;
-      color: #BEB1A6;
+  font-family: Inika;
+  font-size: 14px;
+  color: #BEB1A6;
 }
 .form__button {
   text-align: center;
@@ -212,10 +212,7 @@ input[type="radio"]:checked+label::before {
   width: 600px;
   position: relative;
 }
-.form__group-content-select::after {
 
-
-}
 select {
   border-color: #f4f4f4;
   margin-right: 269px;

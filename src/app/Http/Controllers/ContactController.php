@@ -25,7 +25,6 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        dump('store');
         if ($request->input('action') == 'back') {
             return redirect('/')->withInput();
         }
