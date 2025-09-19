@@ -28,4 +28,5 @@
         <span>Admin</span>
     </div>
     @livewire('modal')
+</div>
 @endsection

@@ -1,5 +1,5 @@
 <div>
-    <form class="search-form" wire:submit.prevent="search">
+    <form class="search-form" wire:submit.prevent="search" novalidate>
         @csrf
         <div class="search-form__item">
             <input class="search-form__item-input" type="text" wire:model="keyword" value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください" />
@@ -74,7 +74,7 @@
                         </p>
                     </div>
                 </td>
-                <td> <button wire:click="openModal()" type="button" class="detail">詳細</button>
+                <td> <button wire:click="openModal({{ $contact->id }})" type="button" class="detail">詳細</button>
                 </td>
             </tr>
             @endforeach
@@ -91,19 +91,19 @@
                 <tr class="modal-inner">
                     <th class="modal-ttl">お名前</th>
                     <td class="modal-data">
-                        {{ $contact['last_name'] }}
+                        {{ $selectedContact['last_name'] }}
                         <span class="space"></span>
-                        <span class="firstName">{{ $contact['first_name'] }}</span>
+                        <span class="firstName">{{ $selectedContact['first_name'] }}</span>
                     </td>
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl">性別</th>
                     <td class="modal-data">
-                        <input type="hidden" value="{{ $contact['gender'] }}" />
+                        <input type="hidden" value="{{ $selectedContact['gender'] }}" />
                         <?php
-                        if ($contact['gender'] == '1') {
+                        if ($selectedContact['gender'] == '1') {
                             echo '男性';
-                        } elseif ($contact['gender'] == '2') {
+                        } elseif ($selectedContact['gender'] == '2') {
                             echo '女性';
                         } else {
                             echo 'その他';
@@ -113,40 +113,38 @@
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl">メールアドレス</th>
-                    <td class="modal-data">{{ $contact['email'] }}</td>
+                    <td class="modal-data">{{ $selectedContact['email'] }}</td>
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl">電話番号</th>
-                    <td class="modal-data">{{ $contact['tel'] }}</td>
+                    <td class="modal-data">{{ $selectedContact['tel'] }}</td>
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl">住所</th>
-                    <td class="modal-data">{{ $contact['address'] }}</td>
+                    <td class="modal-data">{{ $selectedContact['address'] }}</td>
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl">建物名</th>
-                    <td class="modal-data">{{ $contact['building'] }}</td>
+                    <td class="modal-data">{{ $selectedContact['building'] }}</td>
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl">お問い合わせの種類</th>
-                    <td class="modal-data">{{ $contact['category']['content'] }}</td>
+                    <td class="modal-data">{{ $selectedContact['category']['content'] }}</td>
                 </tr>
                 <tr class="modal-inner">
                     <th class="modal-ttl--last">お問い合わせ内容</th>
                     <td class="modal-data--last">
-                        {{ $contact['detail']}}
+                        {{ $selectedContact['detail']}}
                     </td>
                 </tr>
             </table>
-            <form class="delete-form" action="/delete" method="post">
+            <form class="delete-form" action="/delete" method="post" novalidate>
                 @method('delete')
                 @csrf
-                <input type="hidden" name="id" value="{{ $contact['id'] }}" />
+                <input type="hidden" name="id" value="{{ $selectedContact['id'] }}" />
                 <button class="delete-btn"><span>削除</span></button>
             </form>
         </div>
     </div>
     @endif
-</div>
-
 </div>
