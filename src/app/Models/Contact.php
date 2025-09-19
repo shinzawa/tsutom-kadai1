@@ -11,7 +11,8 @@ class Contact extends Model
 
     protected $fillable = ['category_id', 'first_name', 'last_name', 'gender', 'email', 'tel', 'address', 'building', 'detail'];
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
     // search
@@ -19,21 +20,33 @@ class Contact extends Model
     public function scopeKeywordSearch($query, $keyword)
     {
         $parts = explode(' ', $keyword);
-        foreach( $parts as $part) {
+        $_name = '';
+        $_email = false;
+        foreach ($parts as $part) {
             if (filter_var($part, FILTER_VALIDATE_EMAIL)) {
+                $_email = true;
                 $query->where('email', $part);
             } else {
                 if (!empty($part)) {
-                    $query->where('last_name', 'like', '%' . $part . '%')->orWhere('first_name', 'like', '%');
+                    $_name = $_name . $part;
                 }
             }
         }
+        if (!$_email) {
+            $query->where(function ($query) use ($_name) {
+                $searchPattern = '%' . str_replace([' ', '　'], '', $_name) . '%';
+                $query->where('last_name', 'like', $searchPattern)
+                    ->orWhere('first_name', 'like', $searchPattern)
+                    ->orwhereRaw('CONCAT(last_name, first_name) LIKE ?', $searchPattern);;
+            });
+        }
     }
+
     // gender
     public function scopeGenderSearch($query, $gender)
     {
         if (!empty($gender) and $gender != 0) {
-            $query->where('gender', $gender );
+            $query->where('gender', $gender);
         }
     }
 
@@ -52,4 +65,3 @@ class Contact extends Model
         }
     }
 }
-
