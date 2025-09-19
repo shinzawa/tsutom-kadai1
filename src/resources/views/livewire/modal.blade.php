@@ -139,7 +139,7 @@
                 </tr>
             </table>
             <form class="delete-form" action="/delete" method="post" novalidate>
-                @method('delete')
+                <!-- @method('delete') -->
                 @csrf
                 <input type="hidden" name="id" value="{{ $selectedContact['id'] }}" />
                 <button class="delete-btn"><span>削除</span></button>

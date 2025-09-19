@@ -44,4 +44,9 @@ class ContactController extends Controller
         
         return view('liveware.modal', compact('contacts', 'categories'));
     }
+
+    public function destroy(Request $request){
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
+    }
 }
