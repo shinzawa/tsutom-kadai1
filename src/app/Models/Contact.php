@@ -53,7 +53,7 @@ class Contact extends Model
     // category
     public function scopeCategorySearch($query, $category_id)
     {
-        if (!empty($category_id)) {
+        if (!empty($category_id) and $category_id != 0) {
             $query->where('category_id', $category_id);
         }
     }

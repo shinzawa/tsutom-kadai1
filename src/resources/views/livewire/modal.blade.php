@@ -11,6 +11,8 @@
                 <option value="3" id="3">その他</option>
             </select>
             <select class="search-form__item-select" wire:model="category_id">
+                <option class="" value="" hidden>お問い合わせの種類</option>
+                <option value="0">全て</option>
                 @foreach($categories as $category)
                 <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
                 @endforeach
@@ -139,7 +141,7 @@
                 </tr>
             </table>
             <form class="delete-form" action="/delete" method="post" novalidate>
-                <!-- @method('delete') -->
+                @method('delete')
                 @csrf
                 <input type="hidden" name="id" value="{{ $selectedContact['id'] }}" />
                 <button class="delete-btn"><span>削除</span></button>
